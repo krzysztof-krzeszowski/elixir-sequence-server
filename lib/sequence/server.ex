@@ -7,14 +7,6 @@ defmodule Sequence.Server do
     defstruct current_number: 0, stash_pid: nil, delta: 1
   end
 
-  def code_change("0", old_state = {current_number, stash_pid}, _extra) do
-    new_state = %State{current_number: current_number, 
-                      stash_pid: stash_pid,
-                      delta: 1}
-    Logger.info "Changing code from 0 to 1"
-    Logger.info inspect old_state
-    Logger.info inspect new_state
-  end
 
   # API
   def start_link(stash_pid) do
@@ -53,4 +45,15 @@ defmodule Sequence.Server do
   def terminate(_reason, state) do
     Sequence.Stash.save_value state.stash_pid, state.current_number
   end
+
+  def code_change("0", old_state = {current_number, stash_pid}, _extra) do
+    new_state = %State{current_number: current_number, 
+                      stash_pid: stash_pid,
+                      delta: 1}
+    Logger.info "Changing code from 0 to 1"
+    Logger.info inspect(old_state)
+    Logger.info inspect(new_state)
+    { :ok, new_state }
+  end
 end
+
