@@ -1,4 +1,4 @@
-[{release,"sequence","0.1.0","8.3",
+[{release,"sequence","0.1.1","8.3",
           [{kernel,"5.2","./lib/kernel-5.2"},
            {stdlib,"3.3","./lib/stdlib-3.3"},
            {cf,"0.2.2","./lib/cf-0.2.2"},
@@ -11,7 +11,7 @@
            {logger,"1.4.2","./lib/logger-1.4.2"},
            {relx,"3.23.0","./lib/relx-3.23.0"},
            {exrm,"1.0.8","./lib/exrm-1.0.8"},
-           {sequence,"0.1.0","./lib/sequence-0.1.0"},
+           {sequence,"0.1.1","./lib/sequence-0.1.1"},
            {iex,"1.4.2","./lib/iex-1.4.2"},
            {sasl,"3.0.3","./lib/sasl-3.0.3"}],
           permanent}].
