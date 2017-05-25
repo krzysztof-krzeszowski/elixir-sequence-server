@@ -11,4 +11,12 @@ defmodule Sequence.Server do
   def handle_call(:pop, _from, [h | t]) do
     { :reply, h, t }
   end
+
+  def handle_cast({:push, val}, list) do
+    { :noreply, [val | list] }
+  end
+
+  def handle_cast({:increment_number, delta}, current_number) do
+    { :noreply, current_number + delta }
+  end
 end
